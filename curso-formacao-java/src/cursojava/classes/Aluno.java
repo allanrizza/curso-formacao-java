@@ -122,13 +122,24 @@ public class Aluno {
 		media = media / disciplinas.size();
 		return media;
 	}
-
+	
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 70)
 			return true;
 		else
 			return false;
+	}
+
+
+	public String getAlunoAprovado2() {
+		double media = this.getMediaNota();
+		if (media >= 70)
+			return "O aluno está aprovado";
+		else if (media >= 50)
+			return "O aluno está de recuperação";
+		else
+			return "O aluno está reprovado";
 	}
 
 	@Override

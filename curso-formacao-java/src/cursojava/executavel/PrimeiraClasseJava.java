@@ -37,19 +37,42 @@ public class PrimeiraClasseJava {
 			aluno.getDisciplinas().add(disciplina);
 		}
 		
+		boolean querRemover = false;
+		
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 		
 		if(escolha == 0)
 		{
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2, 3 ou 4?");
+			int continuarRemover = 0;
+			int posicao = 1;
 			
-			aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue());
+			while (continuarRemover == 0)
+			{
+				String disciplinaRemover = JOptionPane.showInputDialog(null, "Qual a disciplina? 1,2,3 ou 4?");
+				aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+				posicao ++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
+			}
 		}
+	
+		
+		int proxEscolha = JOptionPane.showConfirmDialog(null, "Deseja remover mais alguma disciplina?");
+		
+		while (querRemover) {
+			if (proxEscolha == 0)
+			{
+							}
+			else
+				querRemover = false;
+		}
+		
 		
 		JOptionPane.showMessageDialog(null, "DISCIPLINAS: " + aluno.getDisciplinas());
 		
 		JOptionPane.showMessageDialog(null,
 				String.format("A média do aluno " + aluno.getNome() + " é %.2f", aluno.getMediaNota()));
+		
+		System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 
 	}
 }
