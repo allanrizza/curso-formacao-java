@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import cursojava.constantes.StatusAluno;
+
 public class Aluno {
 	// Esses são os atributos do aluno
 	private String nome;
@@ -25,11 +27,6 @@ public class Aluno {
 	
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
-	}
-
-	public Aluno(String nomePadrao, int idadePadrao) {
-		this.nome = nomePadrao;
-		this.idade = idadePadrao;
 	}
 
 	public String getNome() {
@@ -135,11 +132,11 @@ public class Aluno {
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
 		if (media >= 70)
-			return "O aluno está aprovado";
+			return StatusAluno.APROVADO;
 		else if (media >= 50)
-			return "O aluno está de recuperação";
+			return StatusAluno.RECUPERACAO;
 		else
-			return "O aluno está reprovado";
+			return StatusAluno.REPROVADO;
 	}
 
 	@Override
