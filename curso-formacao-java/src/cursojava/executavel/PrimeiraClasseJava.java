@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -11,12 +12,19 @@ import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o login:");
+		String senha = JOptionPane.showInputDialog("Informe a senha:");
+		
+		if(login.equals("admin") && senha.equals("admin"))
+		{
+		
 		List<Aluno> alunos = new ArrayList<>();
 		
-		List<Aluno> alunosAprovados = new ArrayList<>();
-		List<Aluno> alunosRecuperacao = new ArrayList<>();
-		List<Aluno> alunosReprovados = new ArrayList<>();
-
+		/* É uma lista onde temos uma chave que identifica uma sequência de valores	também */
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+		
+		
 
 		for (int qtd = 1; qtd <= 5; qtd++) {
 
@@ -65,34 +73,43 @@ public class PrimeiraClasseJava {
 			alunos.add(aluno);
 		}
 		
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+
+		
 		for (Aluno aluno : alunos)
 		{
 			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
-				alunosAprovados.add(aluno);
+				maps.get(StatusAluno.APROVADO).add(aluno);
 			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-				alunosRecuperacao.add(aluno);
+				maps.get(StatusAluno.RECUPERACAO).add(aluno);
 			} else {
-				alunosReprovados.add(aluno);
+				maps.get(StatusAluno.REPROVADO).add(aluno);
 			}
 		}
 		
 		System.out.println("----------- Lista dos alunos aprovados ------------");
-		for (Aluno aluno : alunosAprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
 			System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 			System.out.println("Média: " + aluno.getMediaNota());
 		}
 		
 		System.out.println("----------- Lista dos alunos em recuperação ------------");
-		for (Aluno aluno : alunosRecuperacao) {
+		for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 			System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 			System.out.println("Média: " + aluno.getMediaNota());
 		}
 		
 		System.out.println("----------- Lista dos alunos reprovados ------------");
-		for (Aluno aluno : alunosReprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 			System.out.println("Média: " + aluno.getMediaNota());
 		}
 
 	}
+		else {
+			JOptionPane.showMessageDialog(null, "LOGIN E/OU SENHA INCORRETOS.");
+		}
+}
 }
