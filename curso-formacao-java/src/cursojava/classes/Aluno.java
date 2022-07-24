@@ -13,8 +13,8 @@ public class Aluno {
 	private String dataNascimento;
 	private String registroGeral;
 	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+	private String mae;
+	private String pai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -70,19 +70,19 @@ public class Aluno {
 	}
 
 	public String getNomeMae() {
-		return nomeMae;
+		return mae;
 	}
 
 	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
+		this.mae = nomeMae;
 	}
 
 	public String getNomePai() {
-		return nomePai;
+		return pai;
 	}
 
 	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
+		this.pai = nomePai;
 	}
 
 	public String getDataMatricula() {
@@ -159,7 +159,7 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + mae + ", nomePai=" + pai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
 	}
