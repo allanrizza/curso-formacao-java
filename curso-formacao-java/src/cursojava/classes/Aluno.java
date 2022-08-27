@@ -6,15 +6,8 @@ import java.util.Objects;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 	// Esses são os atributos do aluno
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String mae;
-	private String pai;
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -37,11 +30,11 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public int getIdade() {
+	public Integer getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
 
@@ -70,19 +63,19 @@ public class Aluno {
 	}
 
 	public String getNomeMae() {
-		return mae;
+		return nomeMae;
 	}
 
 	public void setNomeMae(String nomeMae) {
-		this.mae = nomeMae;
+		this.nomeMae = nomeMae;
 	}
 
 	public String getNomePai() {
-		return pai;
+		return nomePai;
 	}
 
 	public void setNomePai(String nomePai) {
-		this.pai = nomePai;
+		this.nomePai = nomePai;
 	}
 
 	public String getDataMatricula() {
@@ -159,7 +152,7 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + mae + ", nomePai=" + pai
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + "]";
 	}
