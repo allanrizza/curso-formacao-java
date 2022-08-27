@@ -11,7 +11,6 @@ public class Aluno extends Pessoa {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	public void setDisciplinas(List<Disciplina> disciplinas) {

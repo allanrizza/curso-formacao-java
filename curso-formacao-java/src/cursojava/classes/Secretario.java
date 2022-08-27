@@ -30,4 +30,20 @@ public class Secretario extends Pessoa {
     public void setNivelExperiencia(String nivelExperiencia) {
         this.nivelExperiencia = nivelExperiencia;
     }
+
+    @Override
+    public String toString() {
+        return "Secretario{" +
+                "registro='" + registro + '\'' +
+                ", nivelCargo='" + nivelCargo + '\'' +
+                ", nivelExperiencia='" + nivelExperiencia + '\'' +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", numeroCpf='" + numeroCpf + '\'' +
+                ", nomeMae='" + nomeMae + '\'' +
+                ", nomePai='" + nomePai + '\'' +
+                ", registroGeral='" + registroGeral + '\'' +
+                '}';
+    }
 }
