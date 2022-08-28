@@ -46,4 +46,9 @@ public class Secretario extends Pessoa {
                 ", registroGeral='" + registroGeral + '\'' +
                 '}';
     }
+
+    @Override
+    public double salario() {
+        return 1800;
+    }
 }

@@ -21,6 +21,11 @@ public class Aluno extends Pessoa {
 		return disciplinas;
 	}
 
+	@Override
+	public double salario() {
+		return 1200;
+	}
+
 	public String getNome() {
 		return this.nome;
 	}
@@ -129,6 +134,11 @@ public class Aluno extends Pessoa {
 			return StatusAluno.RECUPERACAO;
 		else
 			return StatusAluno.REPROVADO;
+	}
+
+	@Override
+	public boolean pessoaMaiorIdade() {
+		return super.pessoaMaiorIdade();
 	}
 
 	@Override

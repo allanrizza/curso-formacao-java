@@ -11,6 +11,8 @@ public abstract class Pessoa {
     protected String nomePai;
     protected String registroGeral;
 
+    public abstract double salario();
+
     public String getNome() {
         return nome;
     }
@@ -65,5 +67,9 @@ public abstract class Pessoa {
 
     public void setRegistroGeral(String registroGeral) {
         this.registroGeral = registroGeral;
+    }
+
+    public boolean pessoaMaiorIdade() {
+        return idade >= 18;
     }
 }
