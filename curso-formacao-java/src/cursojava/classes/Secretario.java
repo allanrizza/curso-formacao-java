@@ -1,11 +1,17 @@
 package cursojava.classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
     private String registro;
 
     private String nivelCargo;
 
-    private String nivelExperiencia;
+    private String experiencia;
+
+    private String login;
+
+    private String senha;
 
     public String getRegistro() {
         return registro;
@@ -23,12 +29,12 @@ public class Secretario extends Pessoa {
         this.nivelCargo = nivelCargo;
     }
 
-    public String getNivelExperiencia() {
-        return nivelExperiencia;
+    public String getExperiencia() {
+        return experiencia;
     }
 
-    public void setNivelExperiencia(String nivelExperiencia) {
-        this.nivelExperiencia = nivelExperiencia;
+    public void setExperiencia(String experiencia) {
+        this.experiencia = experiencia;
     }
 
     @Override
@@ -36,7 +42,7 @@ public class Secretario extends Pessoa {
         return "Secretario{" +
                 "registro='" + registro + '\'' +
                 ", nivelCargo='" + nivelCargo + '\'' +
-                ", nivelExperiencia='" + nivelExperiencia + '\'' +
+                ", nivelExperiencia='" + experiencia + '\'' +
                 ", nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", dataNascimento='" + dataNascimento + '\'' +
@@ -50,5 +56,27 @@ public class Secretario extends Pessoa {
     @Override
     public double salario() {
         return 1800;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    /* Esse é o método do contrato de autenticação */
+    @Override
+    public boolean autenticar() {
+        return login.equals("admin") && senha.equals("admin");
     }
 }
