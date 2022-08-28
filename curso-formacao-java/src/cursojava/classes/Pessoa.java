@@ -2,7 +2,7 @@ package cursojava.classes;
 
 import java.util.Date;
 
-public class Pessoa {
+public abstract class Pessoa {
     protected String nome;
     protected Integer idade;
     protected String dataNascimento;
