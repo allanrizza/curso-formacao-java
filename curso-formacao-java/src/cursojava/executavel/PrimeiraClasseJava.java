@@ -7,9 +7,12 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 	public static void main(String[] args) {
@@ -17,12 +20,8 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login:");
 		String senha = JOptionPane.showInputDialog("Informe a senha:");
 
-		Secretario secretario = new Secretario(); /* diretamente com o objeto */
 
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		if(secretario.autenticar())
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar())
 		{ // se true acessa; se false não acessa.
 		
 		List<Aluno> alunos = new ArrayList<>();
